@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿題２</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!----------- ヘッダー ------------->
+  <div class="header"></div>
+  <div class="header-fixed"></div>
+  <input type="checkbox" class="openSidebarmenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li>"Samurai Enginer Kambara"</li>
+      <span>Kadai & Portfolio</span>
+      <li><a href="#" target="_blank">Home</a></li>
+      <li><a href="./index.html" target="_blank">Password Maker</a></li>
+      <li><a href="./count.html" target="_blank">Word Counter</a></li>
+    </ul>
+  </div>
+
+    <!----------- メインアプリケーション ------------->
+  <div class="wrapper clearfix">
+    <main class="main">
+      <header class="tool_box_header">
+        <h2 class="tool_box_title">パスワード生成（パスワード作成）ツール</h2>
+      </header>
+
+      <div class="tool_box_body">
+        <div class="tool_box_desc">
+          <p>お好みのパスワードを作成するよ</p>
+        </div>
+    <!----------- フォーム ------------->
+        <form method="post" action="" name="formcheck" id="passwordForm">
+          <div class="randam_selects">
+            <!----------- 強度 ------------->
+            <dl>
+            <dt>強度</dt>
+            <dd>
+
+              <div class="check_wrap">
+                <input type="radio" id="Enable" name="strength" value="strCustom" onclick="removeDisabled() , checked_custom()" checked >
+                <i class="shape">
+
+                </i>
+                <label class="txt" for="Enable">カスタム</label>
+              </div>
+
+              <div class="check_wrap">
+                <input type="radio" id="Enable" name="strength" value="strStrong" onclick="setDisabled() , checked_strong()">
+                <i class="shape">
+
+                </i>
+                <label class="txt" for="Enable">強力</label>
+              </div>
+
+              <div class="check_wrap">
+                <input type="radio" id="Enable" name="strength" value="strStorongest" onclick="setDisabled() , checked_word12()">
+                <i class="shape">
+
+                </i>
+                <label class="txt" for="Enable">最強</label>
+              </div>
+               
+            </dd>
+            </dl>
+            <!----------- 文字 ------------->
+            <dl id="selected">
+            <dt>文字
+              <dd>
+
+                <div class="check_wrap">
+                  <input type="checkbox" id="Cbox" name="kind" value="Big" checked >
+                  <i class="shape">
+
+                  </i>
+                  <label for="Cbox0">英文字（大文字）</label>
+                </div>
+
+                <div class="check_wrap">
+                  <input type="checkbox" id="Cbox1" name="kind" checked>
+                  <i class="shape">
+
+                  </i>
+                  <label for="Cbox1" class="txt">英字（小文字）</label>
+                </div>
+                
+                <div class="check_wrap">
+                  <input type="checkbox" id="Cbox2" name="kind" checked>
+                  <i class="shape">
+
+                  </i>
+                  <label class="txt" for="Cbox2">数字</label>
+                </div>
+
+                <div class="check_wrap">
+                  <input type="checkbox" id="Cbox3" name="kind" checked>
+                  <i class="shape">
+
+                  </i>
+                  <label class="txt" for="Cbox3">記号</label>
+                </div>
+
+              </dd>
+            </dt>
+            </dl>
+
+            <!----------- 文字数 ------------->
+            <dl>
+            <dt>文字数</dt>
+            <dd>
+
+              <div class="check_wrap">
+                <input type="radio" name="wordCount" value="">
+                <i class="shape">
+
+                </i>
+                <input type="number" class="form_txt" id="form_number" min="1" max="50" value=1>
+                <label class="txt" for="Digit0">文字</label>
+              </div>
+
+              <div class="check_wrap">
+                <input type="radio" id="Digit2" name="wordCount" value=8 checked>
+                <i class="shape">
+
+                </i>
+                <label for="Digit2" class="txt">８文字</label>
+              </div>
+
+              <div class="check_wrap">
+                <input type="radio" id="Digit3" name="wordCount" value=12>
+                <i class="shape">
+
+                </i>
+                <label class="txt" for="Digit3">12文字</label>
+              </div>
+            </dd>
+            </dl>
+
+            <!----------- 個数 ------------->
+            <dl>
+            <dt>個数</dt>
+            <dd>
+
+              <div class="check_wrap">
+                <input type="radio" id="Su0" name="time" checked>
+                <i class="shape">
+
+                </i>
+                <input type="number" class="form_txt" id="timescounter" min="1" max="50" value=1>
+                <label class="txt" for="Su0">個</label>
+              </div>
+
+              <div class="check_wrap">
+                <input type="radio" id="Su2" name="time" >
+                <i class="shape">
+
+                </i>
+                <label class="txt" for="Su2">10個</label>
+              </div>
+
+              <div class="check_wrap">
+                <input type="radio" id="Su3" name="time">
+                <i class="shape">
+
+                </i>
+                <label class="txt" for="Su3">50個</label>
+              </div>
+
+            </dd>
+            </dl>
+
+            <!----------- その他 ------------->
+            <dl>
+              <dt>その他</dt>
+              <dd>
+  
+                <div class="check_wrap">
+                  <input type="checkbox" id="condition0" name="condition" value="0" >
+                  <i class="shape">
+  
+                  </i>
+                  <label class="txt" for="condition">似通った英数字は省く</label>
+                </div>
+
+                <div class="check_wrap">
+                  <input type="checkbox" id="condition1" name="condition" value="1" >
+                  <i class="shape">
+  
+                  </i>
+                  <label class="txt" for="condition">８文字以内の場合、同じ文字は使わない</label>
+                </div>
+  
+              </dd>
+              </dl>
+
+            <button type="button" class="btn_form" onclick="makePassword()">生成</button>
+            <button type="button" class="btn_form" onclick="resetResult()">リセット</button>
+          </div>
+        </form>
+
+        <!----------- 結果 ------------->
+        <div class="result-box">
+          <div class="item-box">
+            <ul id="password-lists"> 
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+        <!----------- サイドメニュー ------------->
+    <div class="sidemenu">
+      
+      <div class="sidemenu-title">
+        <span class="sidemenu-head">
+          Tool Box
+        </span>
+      </div>
+
+      <ul>
+        <li>
+          <div class="sidemenu-box">
+            <a href="./index.html">
+             <span class="title">
+               Make Password!
+             </span>
+            </a>
+          </div>
+        </li>
+        
+        <li>
+          <div class="sidemenu-box">
+            <a href="./count.html">
+              <span class="title">
+                Count Word!
+              </span>
+             </a>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+ 
+  
+</body>
+<script src="./script.js"></script>
+</html>

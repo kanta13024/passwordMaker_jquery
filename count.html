@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿題２</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!----------- ヘッダー ------------->
+  <div class="header "></div>
+  <div class="header-fixed"></div>
+  <input type="checkbox" class="openSidebarmenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li>"Samurai Enginer Kambara"</li>
+      <span>Kadai & Portfolio</span>
+      <li><a href="#" target="_blank">Home</a></li>
+      <li><a href="./index.html" target="_blank">Password Maker</a></li>
+      <li><a href="./count.html" target="_blank">Word Counter</a></li>
+    </ul>
+  </div>
+  <!----------- メインアプリケーション ------------->
+  <div class="wrapper clearfix">
+    <main class="main">
+      <header class="tool_box_header">
+        <h2 class="tool_box_title">文字数＆ギガ数カウント機能！</h2>
+      </header>
+
+      <div class="tool_box_body">
+        <div class="tool_box_desc">
+          <p>文字数数えるよ！</p>
+        </div>
+        <!----------- フォーム ------------->
+        <form action="" id="string" name="string" method="post">
+          <!----------- 文字入力エリア ------------->
+          <div class="str_counter_inputs">
+            <div class="resizable-textare">
+              <span>
+                <textarea name="str" class="resizable" cols="60" rows="13"></textarea>
+              </span>
+            </div>
+
+          </div>
+
+          <!----------- カウントボタン ------------->
+          <button type="button" class="btn_form" onclick="countStart()">カウント</button>
+          <button type="button" class="btn_form" onclick="countReset()">リセット</button>
+        </form>
+
+        <!----------- 結果 ------------->
+        <div class="str_counter_gene_block">
+          <dl>
+
+            <dt>
+              ■バイト数
+              <span class="att">※ 全角＝2バイト、半角＝1バイトとして換算。改行は2バイト。</span>
+            </dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt" value="">
+            </dd>
+
+            <dt>■全角・半角共に1文字として換算した文字数</dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt" value="">
+            </dd>
+
+            <dt>■全角＝1文字、半角＝0.5文字として換算した文字数</dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt" value="">
+            </dd>
+
+            <dt>■全角・半角共に1文字として換算した文字数(改行、空白は除く)</dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt">
+            </dd>
+
+            <dt>■全角＝1文字、半角＝0.5文字として換算した文字数(改行、空白は除く)</dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt">
+            </dd>
+
+            <dt>■バイト数(改行、空白は除く)</dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt">
+            </dd>
+
+            <dt>■行数</dt>
+            <dd>
+              <input type="text" name="countBox" class="form_txt">
+            </dd>
+            
+          </dl>
+        </div>
+
+
+      
+      </div>
+
+    </main>
+    <!-- サイドメニュー -->
+    <div class="sidemenu">
+      
+      <div class="sidemenu-title">
+        <span class="sidemenu-head">
+          Tool Box
+        </span>
+      </div>
+
+      <ul>
+        <li>
+          <div class="sidemenu-box">
+            <a href="./index.html">
+             <span class="title">
+               Make Pasward!
+             </span>
+            </a>
+          </div>
+        </li>
+        
+        <li>
+          <div class="sidemenu-box">
+            <a href="./count.html">
+              <span class="title">
+                Count Word!
+              </span>
+             </a>
+          </div>
+        </li>
+
+      </ul>
+
+
+
+    </div>
+    
+  </div>
+
+ 
+  
+</body>
+<script src="./script-count.js"></script>
+</html>

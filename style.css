@@ -1,0 +1,342 @@
+body, body *, body *:before, body *:after {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 1024px;
+}
+
+body, button, input, select, option, textarea {
+    font-family:'Josefin Sans',"游ゴシック体","YuGothic","游ゴシック","Yu Gothic","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",'Meiryo',"ＭＳ Ｐゴシック",Helvetica,Arial,sans-serif;
+    
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* -----------ヘッダーの実装----------- */
+.header {
+    display: block;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 10px 5px 10px 1px rgba(0,0,0,0.4);
+    background-color: #fc1033;
+    opacity: 0.8;
+    height: 60px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+
+/* ヘッダーアイコン */
+#openSidebarMenu{
+    transition: all o.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebarIconToggle{
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: fixed;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+/* サイドバーメニュー */
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(
+        180deg
+        , #f90b3b 0%, #ffffff 100%);
+    box-shadow: 2px 2px 4px gray;
+}
+
+.sidebarMenuInner {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner span {
+    display: block;
+    color: #c1a7a7;
+    text-align: center;
+}
+
+#sidebarMenu .sidebarMenuInner li a {
+    color: white;
+}
+
+
+
+/* -----------メインアプリケーションの実装----------- */
+.wrapper{
+    width: 970px;
+    margin: 100px auto 40px;
+}
+
+
+.main {
+    display: block;
+    float: left;
+    width: 660px;
+    /* レイアウト確認用 */
+    height: 900px;
+    border: 1px solid #F7F8F7;
+}
+
+/* ----------パスワード作成用のCSS----------- */
+.randam_selects > dl {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-bottom: 3px solid #fff;
+}
+
+/*強度について、強力、最強を選択していると発生するCSS*/
+.select_disabled {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.randam_selects > dl > dt {
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #eee;
+    font-size: 125%;
+    font-weight: normal;
+    text-align: center;
+}
+
+.randam_selects > dl > dd {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #f9f9f9;
+}
+
+.check_wrap {
+    display: inline-block;
+    cursor: pointer;
+    min-width: 140px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.check_wrap .txt {
+    font-size: 117%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.check_wrap > input[type="number"] {
+    width: 50px;
+    height: 35px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    font-size: 117%;
+    margin-right: 10px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.result-box {
+    background-color: #f9f9f9;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+#password-lists > li {
+    margin: 15px auto 20px;
+    background-color: white;
+    border: 1px solid #d7ee98;
+    padding: 5px 10px;
+}
+
+
+/* ----------文字数カウント用CSS----------- */
+
+.tool_box_header {
+    display: block;
+    text-align: center;
+    background-color: #F9F9F9;
+    width: 100%;
+    padding: 10px 25px 15px;
+}
+.tool_box_desc{
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ----------文字数チェックの結果----------- */
+.str_counter_gene_block {
+    clear: both;
+    padding-top: 30px;
+}
+
+.str_counter_gene_block > dl {
+    background-color: #F9F9F9;
+    padding: 20px 20px;
+}
+
+.str_counter_gene_block > dl > dt {
+    font-size: 105%;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.str_counter_gene_block > dl > dt .att {
+    color: green;
+    font-size: 109%;
+}
+
+/* サイドメニュー */
+
+.sidemenu {
+    display: block;
+    float: right;
+    width: 275px;
+    height: 900px;
+    border: 1px solid #F7F8F7;
+}
+
+.sidemenu .sidemenu-title {
+    width: 100%;
+    padding-bottom: 18px;
+    text-align: center;
+}  
+
+.sidemenu .sidemenu-title {
+    width: 100%;
+    background-color: black;
+    padding-left: 15px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    line-height: 1;
+}
+
+.sidemenu .sidemenu-title .sidemenu-head {
+    color: white;
+}
+
+.sidemenu > ul > li {
+    width: 100%;
+    height: 70px;
+    padding-bottom: 10px;
+}
+
+.sidemenu > ul > li > .sidemenu-box {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F8F7;
+    text-align: center;
+} 
+
+.sidemenu > ul > li > .sidemenu-box .title {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.sidemenu > ul > li > .sidemenu-box .title:hover {
+    opacity: 0.8;
+    transform: translateY(-4px);
+}
