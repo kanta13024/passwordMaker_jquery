@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>宿題２</title>
+  <title>宿題３</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.6.0.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <script src="./jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!----------- ヘッダー ------------->
@@ -51,7 +51,7 @@
             <dd>
 
               <div class="check_wrap">
-                <input type="radio" class="Enable" name="strength" value="strCustom" onclick="removeDisabled() , checked_custom()" checked >
+                <input type="radio" id="Enable" name="strength" value="strCustom" onclick="removeDisabled() , checked_custom()" checked >
                 <i class="shape">
 
                 </i>
@@ -59,7 +59,7 @@
               </div>
 
               <div class="check_wrap">
-                <input type="radio" class="Enable" name="strength" value="strStrong" onclick="setDisabled() , checked_strong()">
+                <input type="radio" id="Enable" name="strength" value="strStrong" onclick="setDisabled() , checked_strong()">
                 <i class="shape">
 
                 </i>
@@ -67,13 +67,13 @@
               </div>
 
               <div class="check_wrap">
-                <input type="radio" class="Enable" name="strength" value="strStorongest" onclick="setDisabled() , checked_word12()">
+                <input type="radio" id="Enable" name="strength" value="strStorongest" onclick="setDisabled() , checked_word12()">
                 <i class="shape">
 
                 </i>
                 <label class="txt" for="Enable">最強</label>
               </div>
-
+               
             </dd>
             </dl>
             <!----------- 文字 ------------->
@@ -96,7 +96,7 @@
                   </i>
                   <label for="Cbox1" class="txt">英字（小文字）</label>
                 </div>
-
+                
                 <div class="check_wrap">
                   <input type="checkbox" id="Cbox2" name="kind" checked>
                   <i class="shape">
@@ -127,7 +127,7 @@
                 <i class="shape">
 
                 </i>
-                <input type="number" class="form_txt" id="formNumber" min="1" max="50" value=1>
+                <input type="number" class="form_txt" id="form_number" min="1" max="50" value=1>
                 <label class="txt" for="Digit0">文字</label>
               </div>
 
@@ -155,16 +155,16 @@
             <dd>
 
               <div class="check_wrap">
-                <input type="radio" id="Su0" name="quantity" checked>
+                <input type="radio" id="Su0" name="time" checked>
                 <i class="shape">
 
                 </i>
-                <input type="number" class="form_txt" id="quantityCounter" min="1" max="50" value=1>
+                <input type="number" class="form_txt" id="timescounter" min="1" max="50" value=1>
                 <label class="txt" for="Su0">個</label>
               </div>
 
               <div class="check_wrap">
-                <input type="radio" id="Su2" name="quantity">
+                <input type="radio" id="Su2" name="time" >
                 <i class="shape">
 
                 </i>
@@ -172,7 +172,7 @@
               </div>
 
               <div class="check_wrap">
-                <input type="radio" id="Su3" name="quantity">
+                <input type="radio" id="Su3" name="time">
                 <i class="shape">
 
                 </i>
@@ -186,23 +186,23 @@
             <dl>
               <dt>その他</dt>
               <dd>
-
+  
                 <div class="check_wrap">
-                  <input type="checkbox" id="condition0" name="other" value="0" >
+                  <input type="checkbox" id="condition0" name="condition" value="0" >
                   <i class="shape">
-
+  
                   </i>
                   <label class="txt" for="condition">似通った英数字は省く</label>
                 </div>
 
                 <div class="check_wrap">
-                  <input type="checkbox" id="condition1" name="other" value="1" >
+                  <input type="checkbox" id="condition1" name="condition" value="1" >
                   <i class="shape">
-
+  
                   </i>
                   <label class="txt" for="condition">８文字以内の場合、同じ文字は使わない</label>
                 </div>
-
+  
               </dd>
               </dl>
 
@@ -214,7 +214,7 @@
         <!----------- 結果 ------------->
         <div class="result-box">
           <div class="item-box">
-            <ul id="passwordLists">
+            <ul id="password-lists"> 
 
             </ul>
           </div>
@@ -225,7 +225,7 @@
 
         <!----------- サイドメニュー ------------->
     <div class="sidemenu">
-
+      
       <div class="sidemenu-title">
         <span class="sidemenu-head">
           Tool Box
@@ -242,7 +242,7 @@
             </a>
           </div>
         </li>
-
+        
         <li>
           <div class="sidemenu-box">
             <a href="./count.html">
@@ -259,8 +259,8 @@
 
   </div>
 
-
-
+ 
+  
 </body>
 <script src="./script.js"></script>
 </html>
